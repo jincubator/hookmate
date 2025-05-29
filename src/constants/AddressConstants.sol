@@ -5,9 +5,7 @@ pragma solidity ^0.8.26;
 library AddressConstants {
     error UnsupportedChainId();
 
-    function getPoolManagerAddressByChainId(
-        uint256 chainId
-    ) internal pure returns (address) {
+    function getPoolManagerAddress(uint256 chainId) internal pure returns (address) {
         if (chainId == 1) {
             return address(0x000000000004444c5dc75cB358380D2e3dE08A90); // Ethereum Mainnet
         }
@@ -69,9 +67,7 @@ library AddressConstants {
         revert UnsupportedChainId();
     }
 
-    function getPositionManagerAddressByChainId(
-        uint256 chainId
-    ) internal pure returns (address) {
+    function getPositionManagerAddress(uint256 chainId) internal pure returns (address) {
         if (chainId == 1) {
             return address(0xbD216513d74C8cf14cf4747E6AaA6420FF64ee9e); // Ethereum Mainnet
         }
@@ -137,9 +133,7 @@ library AddressConstants {
         return address(0x000000000022D473030F116dDEE9F6B43aC78BA3); // Same on all chains.
     }
 
-    function getV4SwapRouterAddress(
-        uint256 chainId
-    ) internal pure returns (address) {
+    function getV4SwapRouterAddress(uint256 chainId) internal pure returns (address) {
         /*
          ** Important: Even though the contract is deployed at the same address, it's not deployed on all chains.
          */
