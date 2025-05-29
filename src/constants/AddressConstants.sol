@@ -2,7 +2,7 @@
 pragma solidity ^0.8.26;
 
 /// @notice List of addresses where core contracts are deployed.
-library Constants {
+library AddressConstants {
     error UnsupportedChainId();
 
     function getPoolManagerAddressByChainId(
@@ -137,7 +137,34 @@ library Constants {
         return address(0x000000000022D473030F116dDEE9F6B43aC78BA3); // Same on all chains.
     }
 
-    function getV4SwapRouterAddress() internal pure returns (address) {
-        return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Same on all chains, but might not be deployed yet.
+    function getV4SwapRouterAddress(
+        uint256 chainId
+    ) internal pure returns (address) {
+        /*
+         ** Important: Even though the contract is deployed at the same address, it's not deployed on all chains.
+         */
+        if (chainId == 1) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Ethereum Mainnet
+        }
+        if (chainId == 130) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Unichain
+        }
+        if (chainId == 10) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Optimism
+        }
+        if (chainId == 8453) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Base
+        }
+        if (chainId == 42161) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Arbitrum One
+        }
+        if (chainId == 137) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Polygon
+        }
+        if (chainId == 11155111) {
+            return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Sepolia
+        }
+
+        revert UnsupportedChainId();
     }
 }
