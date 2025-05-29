@@ -1,0 +1,13 @@
+{
+  "name": "hookmate",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:akshatmittal/hookmate.git",
+  "author": "Akshat Mittal <hi@akshatmittal.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "packageManager": "yarn@4.9.1"
+}
