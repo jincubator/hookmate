@@ -19,11 +19,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"forge-std@github:foundry-rs/forge-std#v1.9.7":
+  version: 1.9.7
+  resolution: "forge-std@https://github.com/foundry-rs/forge-std.git#commit=77041d2ce690e692d6e03cc812b57d1ddaa4d505"
+  checksum: 10c0/21232763e5c5caf7dbedcfa9e3f3bbbe6c874c5f70ec5c801ed76a3821221d323c56eaceff1abc1ea76b42455b64090b3a014c9167500a3291748277ed6c4aa2
+  languageName: node
+  linkType: hard
+
 "hookmate@workspace:.":
   version: 0.0.0-use.local
   resolution: "hookmate@workspace:."
   dependencies:
     "@uniswap/v4-core": "npm:^1.0.2"
     "@uniswap/v4-periphery": "npm:^1.0.2"
+    forge-std: "github:foundry-rs/forge-std#v1.9.7"
   languageName: unknown
   linkType: soft
