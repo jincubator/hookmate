@@ -161,4 +161,17 @@ library AddressConstants {
 
         revert UnsupportedChainId();
     }
+
+    function getV4IntentSwapRouterAddress(uint256 chainId) internal pure returns (address) {
+        /*
+         ** Important: Even though the contract is deployed at the same address, it's not deployed on all chains.
+         ** Currently this is not deployed and so used for local testing only
+         */
+        if (chainId == 1) {
+            revert UnsupportedChainId();
+            // return address(0x00000000000044a361Ae3cAc094c9D1b14Eece97); // Ethereum Mainnet
+        }
+
+        revert UnsupportedChainId();
+    }
 }
