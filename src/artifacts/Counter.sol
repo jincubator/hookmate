@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.26;
+pragma solidity ^0.8.30;
 
 import { DeployHelper } from "./DeployHelper.sol";
 
-library CounterkDeployer {
+library CounterDeployer {
     function deploy(address poolManager, address permit2) internal returns (address Counter) {
         bytes memory args = abi.encode(poolManager, permit2);
         bytes memory initcode_ = abi.encodePacked(initcode(), args);
