@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.26;
+pragma solidity ^0.8.30;
 
 import { PathKey } from "./PathKey.sol";
 import { PoolKey } from "@uniswap/v4-core/src/types/PoolKey.sol";
@@ -72,7 +72,9 @@ interface IUniswapV4IntentRouter {
     /// @param poolKey the pool to swap through
     /// @param hookData the data to be passed to the hook
     /// @param receiver the address to send the output tokens to
+    /// @param solverDeadline solvers must provide a solution before this block.timestamp, otherwise the solve will revert and execute can take place
     /// @param deadline block.timestamp must be before this value, otherwise the transaction will revert
+    /// @param intentSwap true indicates this is an intent Swap
     /// @return Delta the balance changes from the swap
     function swapExactTokensForTokens(
         uint256 amountIn,
@@ -81,7 +83,9 @@ interface IUniswapV4IntentRouter {
         PoolKey calldata poolKey,
         bytes calldata hookData,
         address receiver,
-        uint256 deadline
+        uint256 solverDeadline,
+        uint256 deadline,
+        bool intentSwap
     ) external payable returns (BalanceDelta);
 
     /// @notice Singe pool, exact output swap; swap as few input tokens as possible for the specified amount of output tokens, on a single pool
