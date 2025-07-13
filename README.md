@@ -20,7 +20,7 @@ This initcode bytecode can be generated as follows for the contracts in their re
 Note: You will need to clone the repos locally and do a `forge install` and potentially a `yarn install`. This may give a difference in the last few characters the metadata-hash. If this effects you then look at getting the initcode using a command like `solc --metadata-hash none`
 
 - [V4Router](https://github.com/z0r0z/v4-router/blob/main/src/UniswapV4Router04.sol): `forge inspect UniswapV4Router04 bytecode`
-- [V4IntentRouter](https://github.com/jincubator/v4-router/blob/main/src/UniIntentSwapV4Router04.sol): `forge inspect UniIntentSwapV4Router04 bytecode`
+- [V4IntentRouter](https://github.com/jincubator/v4-router/blob/main/src/UniSwapV4IntentRouter.sol): `forge inspect UniswapV4IntentRouter bytecode`
 - [V4PoolManager](https://github.com/Uniswap/v4-core/blob/main/src/PoolManager.sol): `forge inspect PoolManager bytecode`
 - [V4PositionManager](https://github.com/Uniswap/v4-periphery/blob/main/src/PositionManager.sol): `forge inspect PositionManager bytecode`
 - [IntentSwapHook](https://github.com/jincubator/protocol/blob/main/src/IntentSwapHook.sol): `forge inspect IntentSwapHook bytecode`
