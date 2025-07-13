@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.30;
+pragma solidity ^0.8.26;
 
-import { PathKey } from "./PathKey.sol";
+import { PathKey } from "../libraries/PathKey.sol";
 import { PoolKey } from "@uniswap/v4-core/src/types/PoolKey.sol";
 import { Currency } from "@uniswap/v4-core/src/types/Currency.sol";
 import { BalanceDelta } from "@uniswap/v4-core/src/types/BalanceDelta.sol";
-// import { ISignatureTransfer } from "@permit2/interfaces/ISignatureTransfer.sol";
+import { ISignatureTransfer } from "@permit2/interfaces/ISignatureTransfer.sol";
 
 /// @title Uniswap V4 Swap Router
 /// @notice A simple, stateless router for execution of swaps against Uniswap v4 Pools
 /// @dev ABI inspired by UniswapV2Router02
-interface IUniIntentSwapV4Router04 {
+interface IUniswapV4IntentRouter {
     /// ================ MULTI POOL SWAPS ================= ///
 
     /// @notice Exact Input Swap; swap the specified amount of input tokens for as many output tokens as possible, along the path
